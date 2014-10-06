@@ -1,8 +1,6 @@
 package com.twu.biblioteca;
 
-/**
- * Created by alisonpolton-simon on 10/1/14.
- */
+
 public class Book {
 
     private String title;
@@ -15,10 +13,8 @@ public class Book {
         this.year = year;
     }
 
-
-
-
     public String getFormattedDetails() {
         return String.format("%-40s%-20s%-4s", title, author, year);
     }
+
 }

@@ -19,4 +19,17 @@ public class Library {
             printStream.println(book.getFormattedDetails());
         }
     }
+
+    public void checkout(String title) {
+
+        for (Book book : books) {
+            String bookDetails = book.getFormattedDetails();
+            if(bookDetails.contains(title)) {
+                books.remove(book);
+                break;
+            }
+        }
+
+
+    }
 }

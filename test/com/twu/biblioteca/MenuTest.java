@@ -42,7 +42,7 @@ public class MenuTest {
     public void shouldDisplayOptions() throws IOException {
         menu.displayOptions();
 
-        verify(printStream).println("1: List Books \n2: Quit");
+        verify(printStream).println("1: List Books \n2: Checkout Book \n3: Quit");
     }
 
     @Test
@@ -57,6 +57,7 @@ public class MenuTest {
 
     }
 
+
     @Test
     public void shouldNotifyUserWhenInvalidChoiceIsSelected() throws IOException {
 
@@ -70,6 +71,7 @@ public class MenuTest {
 
         verify(printStream).println("Select a valid option!");
     }
+
 
 
 }

@@ -21,7 +21,8 @@ public class Main {
         QuitCommand quitCommand = new QuitCommand();
         Map<String, Command> commands = new HashMap<String, Command>();
         commands.put("1", new ListBooksCommand(library));
-        commands.put("2", quitCommand);
+        commands.put("2", new CheckoutBookCommand(library, printStream, bufferedReader));
+        commands.put("3", quitCommand);
 
 
         Menu menu = new Menu(printStream, bufferedReader, commands, quitCommand);

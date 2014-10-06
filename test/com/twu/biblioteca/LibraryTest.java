@@ -7,14 +7,11 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.*;
 
-/**
- * Created by alisonpolton-simon on 9/30/14.
- */
+
 public class LibraryTest {
     PrintStream printStream;
     Library library;
@@ -56,4 +53,18 @@ public class LibraryTest {
         verify(printStream).println("bbb");
     }
 
+
+    @Test
+    public void shouldNotListCheckedOutBook(){
+        books.add(book1);
+        when(book1.getFormattedDetails()).thenReturn("aaa");
+
+        books.add(book2);
+        when(book2.getFormattedDetails()).thenReturn("bbb");
+
+        library = new Library(printStream, books);
+        library.checkout("aaa");
+
+        assertThat(books.contains(book1), is(false));
+    }
 }
