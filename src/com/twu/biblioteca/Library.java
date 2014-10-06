@@ -26,6 +26,7 @@ public class Library {
             String bookDetails = book.getFormattedDetails();
             if(bookDetails.contains(title)) {
                 books.remove(book);
+                printStream.println("Thank you! Enjoy the book");
                 break;
             }
         }

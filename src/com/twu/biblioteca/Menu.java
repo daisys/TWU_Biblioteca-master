@@ -39,7 +39,6 @@ public class Menu {
                 printStream.println("Select a valid option!");
 
             }
-
         }
     }
 

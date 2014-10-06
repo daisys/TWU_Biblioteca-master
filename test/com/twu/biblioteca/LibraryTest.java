@@ -67,4 +67,17 @@ public class LibraryTest {
 
         assertThat(books.contains(book1), is(false));
     }
+
+    @Test
+    public void shouldDisplaySuccessfulCheckoutMessageWhenCheckoutSuccessfully(){
+        books.add(book1);
+        when(book1.getFormattedDetails()).thenReturn("aaa");
+
+        library = new Library(printStream, books);
+        library.checkout("aaa");
+
+        verify(printStream).println("Thank you! Enjoy the book");
+    }
+
+
 }
